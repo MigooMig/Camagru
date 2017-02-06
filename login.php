@@ -33,6 +33,9 @@ if(!empty($_POST) && !empty($login) && !empty($passwd)){
 			<input type="password" name="passwd" placeholder="Password" tabindex="4">
 		</fieldset>
 		<fieldset>
+			<input type="checkbox" name="remember" value="1"/> Se souvenir de moi
+		</fieldset>
+		<fieldset>
 			<button id="contact-submit" type="submit" value="OK" name="submit">Sign in</button>
 		</fieldset>
 		<a href="forget_passwd.php">Password oublié</a>

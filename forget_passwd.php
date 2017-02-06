@@ -13,7 +13,7 @@ if(!empty($_POST) && !empty($mail)){
 		$reset_token = str_random(60);
 		$pdo->prepare('UPDATE users SET reset_token = ?, reset_at = NOW() WHERE id = ?')->execute(array($reset_token, $user['id']));
 		$_SESSION['flash']['success'] = "Envoi du lien de réinitialisation du password";
-		mail($_POST['mail'], 'Réinitialisation du password', "Afin de réinitialiser votre password, merci de cliquer sur ce lien\n\nhttp://e1r9p13.42.fr:8080/Camagru/reset_passwd.php?id=".$user['id']."&token=".$reset_token);
+		mail($_POST['mail'], 'Réinitialisation du password', "Afin de réinitialiser votre password, merci de cliquer sur ce lien\n\nhttp://localhost:8080/Camagru/reset_passwd.php?id=".$user['id']."&token=".$reset_token);
 		header('Location: login.php');
 		exit();
 	}else {

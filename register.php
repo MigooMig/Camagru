@@ -37,7 +37,7 @@ if (!empty($_POST)) {
 		$token = str_random(60);
 		$request->execute([$_POST['login'], $password, $_POST['mail'], $token]);
 		$user_id = $pdo->lastInsertId();
-		mail($_POST['mail'], 'Confirmation de votre compte', "Afin de finaliser votre inscription, merci de cliquer sur ce lien\n\nhttp://e1r9p13.42.fr:8080/Camagru/confirm.php?id=".$user_id."&token=".$token);
+		mail($_POST['mail'], 'Confirmation de votre compte', "Afin de finaliser votre inscription, merci de cliquer sur ce lien\n\nhttp://localhost:8080/Camagru/confirm.php?id=".$user_id."&token=".$token);
 		$_SESSION['flash']['success'] = "un email de confirmation a été envoyé afin de valider votre compte";
 		header('Location: login.php');
 		exit();

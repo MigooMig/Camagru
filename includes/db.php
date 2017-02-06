@@ -24,7 +24,7 @@ function SetupDatabase($db, $db_name)
 		login VARCHAR(255) NOT NULL, 
 		mail VARCHAR(255) NOT NULL,
 		passwd VARCHAR(255) NOT NULL,
-		confirmation_token VARCHAR(60) NOT NULL,
+		confirmation_token VARCHAR(60) DEFAULT NULL,
 		confirmed_at DATETIME DEFAULT NULL,
 		reset_token VARCHAR(60) DEFAULT NULL,
 		reset_at DATETIME DEFAULT NULL);");

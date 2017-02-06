@@ -14,9 +14,7 @@ if (session_status() == PHP_SESSION_NONE){
 
 		<ul class="topnav">
 			<li><a class="active" href="account.php">Accueil</a></li>
-			<li><a href="register.php">S'inscrire</a></li>
-			<li><a href="login.php">Se Connecter</a></li>
-			<?php if (!$_SESSION || isset($_SESSION['auth'])): ?>
+			<?php if ($_SESSION || isset($_SESSION['auth'])): ?>
 				<li><a href="account.php">Mon compte</a></li>
 				<li><a href="logout.php">Logout</a></li>
 			<?php else: ?>

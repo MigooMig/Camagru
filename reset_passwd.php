@@ -2,13 +2,24 @@
 
 if(isset($_GET['id']) && isset($_GET['token'])){
 	require 'includes/db.php';
-	$request = $pdo->prepare('SELECT * FROM users WHERE id = ? AND token = ? AND reset_at > DATE_SUB(NOW(), INTERVALE 30 MINUTE)');
-	$request->execute(array($_GET['id']), array($_GET['token']));
+	require 'includes/functions.php';
+	$request = $pdo->prepare('SELECT * FROM users WHERE id = ? AND reset_token = ? AND reset_at > DATE_SUB(NOW(), INTERVAL 30 MINUTE)');
+	$request->execute(array($_GET['id'], $_GET['token']));
 	$user = $request->fetch();
 	if($user) {
-		debug($user);
+		if(!empty($_POST)){
+			if(!empty($_POST['passwd']) && $_POST['passwd'] == $_POST['passwd_confirm'])
+				$password = password_hash($_POST['passwd'], PASSWORD_BCRYPT);
+				$pdo->prepare('UPDATE users SET passwd = ?, reset_at = NULL, reset_token = NULL')->execute(array($password));
+				session_start();
+				$_SESSION['flash']['success'] = "Le password est mis à jour";
+				$_SESSION['auth'] = $user;
+				header('Location: account.php');
+				exit();
+		}
 
 	}else {
+		session_start();
 		$_SESSION['flash']['danger'] = "Ce token n'est pas valide";
 		header('Location: login.php');
 	}
