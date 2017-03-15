@@ -4,7 +4,7 @@ require_once 'includes/functions.php';
 if (!empty($_POST)) {
 	$errors = array();
  	require_once 'includes/db.php';
-	if(empty($_POST['login']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['login'])){
+	if(empty($_POST['login']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['login']) || strlen($_POST['login']) <= 2){
 			$errors['login'] = "Le login n'est pas valide";
 	} else {
 		$request = $pdo->prepare('SELECT id FROM users WHERE login = ?');

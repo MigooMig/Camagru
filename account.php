@@ -32,5 +32,4 @@ require 'includes/header.php';
 	</fieldset>
 	</form>
 </div>
-
 <?php require 'includes/footer.php'; ?>
