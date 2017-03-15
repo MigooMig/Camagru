@@ -183,6 +183,13 @@ button{
   font-size: 15px;
 }
 
+.titre_account{
+  font-family: 'Caesar Dressing', cursive;
+  text-align: center;
+  font-size: 60px;
+  color: #333;
+}
+
 .pagination{
   font-size: 200%;
 }
@@ -251,41 +258,44 @@ button{
 }
 
 #startbutton{
-  background-color: #DC143C;
-  text-decoration: none;
-  border: 1px;
-  border-radius: 5px;
-  color: white;
-  width: 40%;
-  height: 30px;
-  font-family: Verdana;
-  font-size: 1.5em;
+    background-color: #DC143C;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 5px;
+    color: white;
+    width: 51%;
+    height: 30px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5em;
+    margin-right: -178px;
 }
 
 #upload{
-  background-color: #DC143C;
-  text-decoration: none;
-  border: 1px;
-  border-radius: 5px;
-  color: white;
-  width: 40%;
-  height: 30px;
-  font-family: Verdana;
-  font-size: 1.5em;
+    background-color: #DC143C;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 5px;
+    color: white;
+    width: 51%;
+    height: 30px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5em;
+    margin-left: -101px;
 }
 
 #file{
-  background-color: #DC143C;
-  text-decoration: none;
-  border: 1px;
-  border-radius: 5px;
-  color: white;
-  width: 40%;
-  height: 30px;
-  font-family: Verdana;
-  font-size: 1.5em;
-  position: relative;
-  right: 88px;
+    background-color: #DC143C;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 5px;
+    color: white;
+    width: 95%;
+    height: 30px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5em;
+    position: relative;
+    right: -38px;
+    font-size: 16px;
 }
 
 /*#upload{
@@ -318,17 +328,19 @@ button{
 }
 
 .info{
-  height: 46px;
-  width: 100%;
+  height: 54px;
+  width: 97%;
   margin-top: 10px;
+  font-family: 'Inconsolata', monospace;
 }
 
 .info_user{
   position: relative;
   left: -223px;
   display: inline;
-  font-size: 28px;
-  font-family: Verdana;
+  font-size: 30px;
+  color: #333;
+  font-family: 'Inconsolata', monospace;
 }
 
 .img_size{
@@ -346,7 +358,7 @@ button{
   height: 80px;
   float: right;
   margin-top: -19px;
-  margin-right: -31px;
+  margin-right: -23px;
 }
 
 .comment{
@@ -383,7 +395,8 @@ button{
 
  .com_user{
     display:inline;
-    font-family: Verdana;
+    color: #333;
+    font-family: 'Inconsolata', monospace;
     font-size: 20px;
   }
 

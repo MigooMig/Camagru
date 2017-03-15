@@ -17,7 +17,7 @@ if(!empty($_POST)){
 require 'includes/header.php'; 
 ?>
 
-<h1>Bonjour <?= $_SESSION['auth']['login']; ?></h1>
+<h1 class="titre_account">Bonjour <?= $_SESSION['auth']['login']; ?></h1>
 
 <div class="container">
 	<form id="contact" action="" method="post">
