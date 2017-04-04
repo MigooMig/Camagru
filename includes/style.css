@@ -253,9 +253,18 @@ button{
 }
 
 .canvas{
+  width: 500px;
+  height: 400px;
   margin-top:10px;
+  margin-left: 65px;
   //transform: scale(-1, 1);
 }
+
+.user_pic_mobile{
+    display: none;
+    margin: 0 auto;
+    width: 600px;
+  }
 
 #startbutton{
     background-color: #DC143C;
@@ -343,11 +352,6 @@ button{
   font-family: 'Inconsolata', monospace;
 }
 
-.img_size{
-  height: 440px;
-  width: 100%;
-}
-
 .comment_text{
   text-align: left;
   padding-left: 8px;
@@ -368,6 +372,19 @@ button{
     padding-bottom: 10px;
     word-wrap: break-word;
 
+}
+
+.button_firefox{
+    background-color: #DC143C;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 5px;
+    color: white;
+    width: 98%;
+    height: 30px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5em;
+    margin-right: -55px;
 }
 
 .interaction{
@@ -407,3 +424,184 @@ button{
     font-size: 15px;
   }
 
+  /*responsive*/
+
+@media screen and (min-width: 200px) and (max-width: 600px){
+  
+
+  /*menu*/
+  
+  .titre {
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 38px;
+    margin-left: 10px;
+    color: #333;
+  }
+
+  .box_top{
+    width: 526px;
+    height: auto;
+    background-color: #C0C0C0;
+    margin-top: -53px;
+    margin-left: -105px;
+  }
+
+  #video{
+    width: 374px;
+    height: auto;
+    margin-top: 132px;
+    margin-left: -684px;
+  } 
+  
+  .canvas{
+    width: 374px;
+    height: auto;
+    margin-top:10px;
+    margin-left: -275px;
+    transform: scale(-1, 1);
+  }
+
+  #file{
+    background-color: #DC143C;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 5px;
+    color: white;
+    width: 73%;
+    height: 30px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5em;
+    position: relative;
+    right: 140px;
+    font-size: 16px;
+  }
+  
+  .user_pic_mobile{
+    margin-left: -136px;
+    display: block;
+    width: 600px;
+  }
+
+  .user_picture{
+      display: none;
+      width: 600px;
+}   
+  #startbutton{
+    background-color: #DC143C;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 5px;
+    color: white;
+    width: 80%;
+    height: 30px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5em;
+    margin-left: -92px;
+    display: block;
+    margin-top: 6px;
+  }
+
+  #upload{
+    background-color: #DC143C;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 5px;
+    color: white;
+    width: 80%;
+    height: 30px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5em;
+    margin-left: -280px;
+  }
+
+  /*account*/
+  
+  .titre_account{
+    font-family: 'Caesar Dressing', cursive;
+    text-align: center;
+    font-size: 43px;
+    color: #333;
+  }
+
+  #contact{
+    background: #F9F9F9;
+    padding: 25px;
+    margin: 8px 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  /*gallery*/
+
+  .box_gallery{
+      margin:45px auto;
+      width: 95%;
+      height: auto;
+      display: block;
+      text-align: center;
+      background-color: #C0C0C0;
+      margin-top: 10px;
+  }
+
+  .comment_text{
+    text-align: left;
+    padding-left: 8px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    word-wrap: break-word;
+    width: 215px;
+    height: 51px;
+    float: right;
+    margin-top: -6px;
+    margin-right: -20px;
+  }
+  
+  .user_log{
+    font-family:120%;
+  }
+
+  img{
+    width: 43%;
+    margin-top: 5px;
+  }
+
+  .picture_size{
+    height: auto;
+    width: 100%;
+  }
+  
+  .img_size{
+    height: 100%;
+    width: 100%;
+    border-radius:0 0 5px 5px;
+  }
+
+  .interaction{
+    height: 46px;
+    width: 100%;
+    //margin-top: -37px;
+  }
+
+  .button_firefox{
+    background-color: #DC143C;
+    text-decoration: none;
+    border: 1px;
+    border-radius: 5px;
+    color: white;
+    width: 115%;
+    height: 30px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5em;
+    margin-left: -53px;
+  } 
+
+  .info_user{
+    position: relative;
+    left: -70px;
+    display: inline;
+    font-size: 43px;
+    font-family: amatic sc;
+  }
+  .pagination{
+    font-size: 260%;
+  }
+}

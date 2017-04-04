@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE){
 	//session_start();
 }
 require 'includes/functions.php';
-require 'includes/db.php';
+require 'config/database.php';
 logged_only();
 ?>
 <?php require_once 'includes/header.php'; ?>
@@ -47,7 +47,12 @@ logged_only();
 				<div class='user_picture'>";
 					get_user_picture($pdo, $_SESSION['auth']['id']);
 					echo"</div>
-				</td>	
+				</td>
+				</table>
+
+				<div class='user_pic_mobile'>";
+					get_user_picture($pdo, $_SESSION['auth']['id']);
+			echo"</div>
 		</div>";
 }
 ?>

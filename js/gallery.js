@@ -27,6 +27,30 @@ var getHttpRequest = function () {
   return httpRequest
 }
 
+function sendCom(id){
+  var image_id = 'c' + id;
+  var comment = document.getElementById(image_id);
+  var xhr = getHttpRequest();
+  var com = new FormData();
+  com.append('comment', comment.value);
+  com.append('image_id', id);
+  xhr.open('POST', 'http://localhost:8080/Camagru/comment.php', true);
+  xhr.setRequestHeader('X-Requested-With', 'xmlhttprequest');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) 
+      {
+      
+        location.reload();
+        console.log(xhr.responseText);
+      }
+      else{
+       // console.log("So comman ?");
+      }
+    }
+    xhr.send(com);
+    return ;
+};
+
 function likeImg(id){
 	var heart = document.getElementById(id);
 	var val = heart.classList.contains('fa-heart-o');
@@ -83,17 +107,23 @@ function likeImg(id){
     }
   }
 
-  function comment(id){
+  function comment(ev, id){
+   if (window.event) {
     var key = window.event.keyCode;
     console.log(key);
-    if (key == 13)
+  }
+  else {
+        console.log("peneloppe fillion");
+    return ;
+  }
+    //  console.log(key);
+
+    if (key == 13 )
     {
       var image_id = 'c' + id;
-      console.log(image_id);
       var comment = document.getElementById(image_id) ;
       var xhr = getHttpRequest();
       var com = new FormData();
-      console.log(comment.value);
       com.append('comment', comment.value);
       com.append('image_id', id);
       xhr.open('POST', 'http://localhost:8080/Camagru/comment.php', true);
@@ -101,15 +131,10 @@ function likeImg(id){
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) 
         {
-          if (xhr.status === 200) 
-          {
+      
        location.reload();
-       //console.log(xhr.responseText);
-          } 
-          else 
-          {
-            console.log("wrong link");
-          }
+     
+            console.log(xhr.responseText);
         }
       }
       xhr.send(com);

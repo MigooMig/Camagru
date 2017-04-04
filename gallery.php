@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require 'includes/db.php';
+require 'config/database.php';
 require 'includes/header.php';
 
 $nb_post = count_post($pdo);
@@ -44,7 +44,8 @@ foreach($var as $key => $value) {
 	{
 		echo "<i id='{$value->id}' class='fa fa-heart-o heart_s' aria-hidden='true' onclick='likeImg(this.id)' style='margin-left:-5px;margin-top:8px;font-size: 30px; float: left;@media screen and (min-width: 200px) and (max-width: 1024px){font-size: 57px;}'></i>";
 	}
-	echo "<input id='c{$value->id}' class='comment_text' type='text' placeholder='Add comment...' maxlength='1000' autocomplete='off' onkeypress='comment({$value->id})'>";
+	echo "<input id='c{$value->id}' class='comment_text' type='text' placeholder='Add comment...' maxlength='1000' autocomplete='off' onkeypress='comment(event, {$value->id})'>";
+	echo "<button id='cf{$value->id}' class='button_firefox' onclick='sendCom({$value->id})' type='submit'  name='submit'>Send</button>";
 	print_r('</div>');
 	}
 	print_r('</div>');

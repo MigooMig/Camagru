@@ -3,7 +3,7 @@
 session_start();
 $user_id = $_GET['id'];
 $token = $_GET['token'];
-require 'includes/db.php';
+require 'config/database.php';
 $request = $pdo->prepare('SELECT * FROM users WHERE id = ?');
 $request->execute(array($user_id));
 $user = $request->fetch();

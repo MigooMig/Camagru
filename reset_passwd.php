@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_GET['id']) && isset($_GET['token'])){
-	require 'includes/db.php';
+	require 'config/database.php';
 	require 'includes/functions.php';
 	$request = $pdo->prepare('SELECT * FROM users WHERE id = ? AND reset_token IS NOT NULL AND reset_token = ? AND reset_at > DATE_SUB(NOW(), INTERVAL 30 MINUTE)');
 	$request->execute(array($_GET['id'], $_GET['token']));

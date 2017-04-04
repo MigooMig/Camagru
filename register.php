@@ -3,9 +3,9 @@ session_start();
 require_once 'includes/functions.php';
 if (!empty($_POST)) {
 	$errors = array();
- 	require_once 'includes/db.php';
-	if(empty($_POST['login']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['login']) || strlen($_POST['login']) <= 2){
-			$errors['login'] = "Le login n'est pas valide";
+ 	require_once 'config/database.php';
+	if(empty($_POST['login']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['login']) || strlen($_POST['login']) <= 5){
+			$errors['login'] = "Le login n'est pas valide, veuillez entrer un pseudo égal ou supérieur à 5 caractères";
 	} else {
 		$request = $pdo->prepare('SELECT id FROM users WHERE login = ?');
 		$request->execute(array($_POST['login']));
@@ -27,8 +27,10 @@ if (!empty($_POST)) {
 			$errors['mail'] = 'cet email est dèjà utilisé.';
 		}
 	}
-	if(empty($_POST['passwd']) || $_POST['passwd'] != $_POST['passwd_confirm']){
-		$errors['passwd'] = "Votre mot de passe n'est pas valide";
+	$length = strlen($_POST['passwd']) >= 8;
+	$number = preg_match('#[0-9]#', $_POST['passwd']);
+	if(empty($_POST['passwd']) || !$length || !$number || $_POST['passwd'] != $_POST['passwd_confirm']){
+		$errors['passwd'] = "Votre mot de passe n'est pas valide, 8 caractère + 1 chiffre";
 	}
 
 	if(empty($errors)){

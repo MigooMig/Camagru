@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once('includes/db.php');
+require_once('config/database.php');
 
 //var_dump($_SESSION);
 if($_POST['img'] && $_POST['filter'] && $_SESSION['auth'])

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "includes/db.php";
+require "config/database.php";
 var_dump($_POST);
 var_dump($_SESSION);
 if($_POST['comment'] && $_POST['image_id'])
@@ -20,9 +20,6 @@ if($_POST['comment'] && $_POST['image_id'])
 		echo $link;	
 		comment_mail($var['login'], $var['mail'], $_SESSION['login'], $link);
 	}
-//	else
-//	{
-//		echo "this is picture";
-//	}
+	echo "Je suis la mon gars !";
 }
 ?>
